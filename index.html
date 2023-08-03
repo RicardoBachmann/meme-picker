@@ -3,10 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Meme Picker</title>
   </head>
+
   <body>
-    <script src="script.js"></script>
+    <header>
+      <div class="header--inner">
+        <img src="/images/pumpkin.png" class="pumpkin--img" alt="" />
+        <div>
+          <h2>Pumkin's Purrfect...</h2>
+          <h1>Meme Picker</h1>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h3>Select Your Current Emotion</h3>
+      <section class="controls--container">
+        <div class="emotion--radios"></div>
+        <div class="gifs-check">
+          <lable class="lable--gifs-check">Animated GIFs only</lable>
+          <input class="option--gifs-only" type="checkbox" />
+        </div>
+        <button class="btn--image-get">Get Image</button>
+      </section>
+    </main>
+    <script src="script.js" type="module"></script>
   </body>
 </html>
