@@ -168,3 +168,11 @@ const catsData = [
     alt: "A cat looking sad",
   },
 ];
+
+function getEmotionsArray(cats) {
+  for (let cat of cats) {
+    console.log(cat);
+  }
+}
+
+getEmotionsArray(catsData);
