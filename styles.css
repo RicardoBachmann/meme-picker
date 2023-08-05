@@ -61,6 +61,13 @@ header {
   border-radius: 5px;
 }
 
+.radio {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #bcbcbc;
+  padding: 4px 8px;
+}
+
 .gifs--check {
   display: flex;
   align-items: center;
