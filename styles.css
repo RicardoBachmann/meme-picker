@@ -69,6 +69,20 @@ header {
   padding: 4px 8px;
 }
 
+label {
+  font-size: 14px;
+  padding: 3px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.highlight {
+  background-color: #fff0ee;
+  color: #bd301d;
+  font-weight: bold;
+  accent-color: #bd301d;
+}
+
 .gifs--check {
   display: flex;
   align-items: center;
