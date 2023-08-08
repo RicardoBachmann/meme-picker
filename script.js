@@ -20,17 +20,17 @@ function highlightCheckedOption(e) {
 }
 
 function getMatchingCatsArray() {
-  const isGif = gifsOnlyOption.checked;
-
-  console.log(isGif);
-
   if (document.querySelector('input[type="radio"]:checked')) {
     const selectedEmotion = document.querySelector(
       'input[type="radio"]:checked'
     ).value;
-    console.log(selectedEmotion);
-  } else {
-    console.log("choose a emotion");
+    const isGif = gifsOnlyOption.checked;
+
+    const matchingCatsArray = catsData.filter(function (cat) {
+      return cat.emotionTags.includes(selectedEmotion);
+    });
+
+    console.log(matchingCatsArray);
   }
 }
 
