@@ -39,11 +39,12 @@ function getMatchingCatsArray() {
 }
 
 function getSingleCatObject() {
-  console.log(getMatchingCatsArray());
+  const catsArray = getMatchingCatsArray();
+  console.log(catsArray);
 }
 
 function renderCat() {
-  getSingleCatObject();
+  getSingleCatObject(); // temporary
 }
 
 function getEmotionsArray(cats) {
