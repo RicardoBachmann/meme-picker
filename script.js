@@ -1,8 +1,10 @@
 import { catsData } from "./data.js";
 
 const emotionRadios = document.getElementById("emotion-radios");
-const getImageBtn = document.getElementById("getImage-btn");
+const getImageBtn = document.getElementById("get-image-btn");
 const gifsOnlyOption = document.getElementById("gifs-only-option");
+const modalInner = document.getElementById("modal-inner");
+const modal = document.getElementById("modal");
 
 emotionRadios.addEventListener("change", highlightCheckedOption);
 
@@ -50,7 +52,15 @@ function getSingleCatObject() {
 }
 
 function renderCat() {
-  getSingleCatObject(); // temporary
+  const catbObject = getSingleCatObject();
+
+  modalInner.innerHTML = `<img
+    class="cat-img"
+    src="./images/${catbObject.image}"
+    alts="${catbObject.alt}""
+    >`;
+
+  modal.style.display = "flex";
 }
 
 function getEmotionsArray(cats) {
