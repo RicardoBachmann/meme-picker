@@ -5,8 +5,11 @@ const getImageBtn = document.getElementById("get-image-btn");
 const gifsOnlyOption = document.getElementById("gifs-only-option");
 const modalInner = document.getElementById("modal-inner");
 const modal = document.getElementById("modal");
+const modalBtnClose = document.getElementById("modal-btn-close");
 
 emotionRadios.addEventListener("change", highlightCheckedOption);
+
+modalBtnClose.addEventListener("click", closeModal);
 
 getImageBtn.addEventListener("click", renderCat);
 
@@ -19,6 +22,33 @@ function highlightCheckedOption(e) {
 
   // remove all instances of the highlight class
   document.getElementById(e.target.id).parentElement.classList.add("highlight");
+}
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+function renderCat() {
+  const catbObject = getSingleCatObject();
+
+  modalInner.innerHTML = `<img
+    class="cat-img"
+    src="./images/${catbObject.image}"
+    alts="${catbObject.alt}""
+    >`;
+
+  modal.style.display = "flex";
+}
+
+function getSingleCatObject() {
+  const catsArray = getMatchingCatsArray();
+
+  if (catsArray.length === 1) {
+    return catsArray[0];
+  } else {
+    const randomCats = Math.floor(Math.random() * catsArray.length);
+    return catsArray[randomCats];
+  }
 }
 
 function getMatchingCatsArray() {
@@ -38,29 +68,6 @@ function getMatchingCatsArray() {
 
     return matchingCatsArray;
   }
-}
-
-function getSingleCatObject() {
-  const catsArray = getMatchingCatsArray();
-
-  if (catsArray.length === 1) {
-    return catsArray[0];
-  } else {
-    const randomCats = Math.floor(Math.random() * catsArray.length);
-    return catsArray[randomCats];
-  }
-}
-
-function renderCat() {
-  const catbObject = getSingleCatObject();
-
-  modalInner.innerHTML = `<img
-    class="cat-img"
-    src="./images/${catbObject.image}"
-    alts="${catbObject.alt}""
-    >`;
-
-  modal.style.display = "flex";
 }
 
 function getEmotionsArray(cats) {
